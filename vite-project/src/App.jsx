@@ -1,4 +1,4 @@
-gimport {
+import {
   Box,
   Button,
   ButtonGroup,
