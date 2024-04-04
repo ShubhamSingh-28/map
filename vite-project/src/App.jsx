@@ -1,4 +1,4 @@
-import {
+gimport {
   Box,
   Button,
   ButtonGroup,
@@ -36,7 +36,7 @@ function App() {
   /** @type React.MutableRefObject<HTMLInputElement> */
   const originRef = useRef()
   /** @type React.MutableRefObject<HTMLInputElement> */
-  const destiantionRef = useRef()
+  const destinationRef = useRef()
 
   if (!isLoaded) {
     return <SkeletonText />
@@ -50,7 +50,7 @@ function App() {
     const directionsService = new google.maps.DirectionsService()
     const results = await directionsService.route({
       origin: originRef.current.value,
-      destination: destiantionRef.current.value,
+      destination: destinationRef.current.value,
       // eslint-disable-next-line no-undef
       travelMode: google.maps.TravelMode.DRIVING,
     })
@@ -64,7 +64,7 @@ function App() {
     setDistance('')
     setDuration('')
     originRef.current.value = ''
-    destiantionRef.current.value = ''
+    destinationRef.current.value = ''
   }
 
   return (
@@ -115,7 +115,7 @@ function App() {
               <Input
                 type='text'
                 placeholder='Destination'
-                ref={destiantionRef}
+                ref={destinationRef}
               />
             </Autocomplete>
           </Box>
